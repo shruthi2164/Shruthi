@@ -1,0 +1,6 @@
+{
+  "name": "Blood Donation Platform",
+  "description": "A modern, responsive blood donation platform to find blood donors, register as a donor, and manage emergency blood requests.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

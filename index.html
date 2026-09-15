@@ -1,0 +1,1367 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blood Donation Platform - Donate Blood, Save Lives</title>
+    <meta name="description" content="A modern, responsive blood donation platform to find blood donors, register as a donor, and manage emergency blood requests." />
+    <meta property="og:title" content="Blood Donation Platform - Donate Blood, Save Lives" />
+    <meta property="og:description" content="A modern, responsive blood donation platform to find blood donors, register as a donor, and manage emergency blood requests." />
+    <meta property="og:type" content="website" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- Top Emergency Helpline Banner -->
+    <div class="top-bar" id="topBar">
+      <div class="container">
+        <div class="top-bar-emergency">
+          <span class="pulse-dot"></span>
+          <span>24/7 National Emergency Blood Helpline:</span>
+          <a href="tel:18007335433" class="helpline-link" id="topHelplineLink">
+            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z"/>
+            </svg>
+            1800-RED-LIFE (1800-733-5433)
+          </a>
+        </div>
+        <div class="top-bar-links">
+          <span>Official Hospital & NGO Network</span>
+          <span>•</span>
+          <span>Real-time Donor Matching</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <header class="navbar" id="navbar">
+      <div class="container">
+        <a href="#home" class="nav-brand" id="navBrand">
+          <div class="brand-icon">
+            <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+            </svg>
+          </div>
+          <span class="brand-text">Red<span>Life</span></span>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="nav-menu" id="navMenu">
+          <a href="#home" class="nav-link active" id="navLinkHome">Home</a>
+          <a href="#about" class="nav-link" id="navLinkAbout">About Us</a>
+          <a href="#register" class="nav-link" id="navLinkRegister">Become a Donor</a>
+          <a href="#find-blood" class="nav-link" id="navLinkFind">Find Blood</a>
+          <a href="#blood-request" class="nav-link" id="navLinkRequest">Blood Request</a>
+          <a href="#dashboard" class="nav-link" id="navLinkDashboard">Donor Dashboard</a>
+          <a href="#contact" class="nav-link" id="navLinkContact">Contact</a>
+          <button class="btn btn-outline-red mobile-login-btn" onclick="openAuthModal()" style="display: none;" id="mobileLoginBtn">Sign In / Switch Profile</button>
+        </nav>
+
+        <!-- Right Side Nav Actions -->
+        <div class="nav-actions">
+          <button class="btn btn-secondary btn-login" onclick="openAuthModal()" id="desktopLoginBtn">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+            </svg>
+            Sign In / Profile
+          </button>
+          <a href="#blood-request" class="btn btn-primary btn-sm" id="navEmergencyBtn">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+            </svg>
+            Urgent Need
+          </a>
+          <!-- Mobile Hamburger Toggle -->
+          <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- ==========================================
+           1. HOME / HERO SECTION
+           ========================================== -->
+      <section class="hero" id="home">
+        <div class="container">
+          <div class="hero-grid">
+            <!-- Hero Left: Content -->
+            <div class="hero-content">
+              <div class="hero-urgent-badge">
+                <span class="pulse-anim" style="display:inline-block;">🩸</span>
+                Every 2 Seconds Someone Urgently Needs Blood
+              </div>
+              <h1 class="hero-title">
+                Donate Blood, <br />
+                <span class="highlight">Save Lives.</span>
+              </h1>
+              <p class="hero-description">
+                A single voluntary blood donation can save up to 3 patient lives. 
+                Join our nationwide network of verified voluntary donors, locate nearest blood matches, 
+                and fulfill emergency blood requests when minutes matter most.
+              </p>
+              
+              <div class="hero-actions">
+                <a href="#register" class="btn btn-primary btn-lg" id="heroBtnRegister">
+                  <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+                  </svg>
+                  Become a Donor
+                </a>
+                <a href="#find-blood" class="btn btn-secondary btn-lg" id="heroBtnFind">
+                  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                  </svg>
+                  Find Blood
+                </a>
+              </div>
+
+              <div class="hero-trust">
+                <div class="trust-item">
+                  <svg class="trust-icon" width="18" height="18" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>100% Verified Donors</span>
+                </div>
+                <div class="trust-item">
+                  <svg class="trust-icon" width="18" height="18" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>Zero Commercial Middlemen</span>
+                </div>
+                <div class="trust-item">
+                  <svg class="trust-icon" width="18" height="18" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>Free NGO Service</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hero Right: Healthcare Medical Illustration & Floating Cards -->
+            <div class="hero-visual">
+              <div class="hero-illustration-wrapper">
+                <!-- Floating top pill -->
+                <div class="floating-pill top-left float-anim">
+                  <div class="pill-icon red">
+                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <div style="font-size: 0.75rem; color: var(--gray-500);">Universal Donor</div>
+                    <div style="color: var(--primary-red); font-size: 0.95rem;">Type O- Needed</div>
+                  </div>
+                </div>
+
+                <!-- Main Visual Card -->
+                <div class="illustration-card">
+                  <div class="illustration-header">
+                    <div style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.9;">Emergency Healthcare Response</div>
+                    <h3 style="font-size: 1.35rem; font-weight: 800; margin-top: 4px;">Voluntary Blood Life-Line</h3>
+                  </div>
+                  
+                  <div class="illustration-body">
+                    <!-- SVG Healthcare Illustration -->
+                    <svg viewBox="0 0 380 240" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: auto;">
+                      <rect width="380" height="240" rx="12" fill="#F9FAFB"/>
+                      
+                      <!-- Hospital / Medical Cross Symbol -->
+                      <circle cx="190" cy="90" r="48" fill="#FEE2E2" stroke="#FCA5A5" stroke-width="2"/>
+                      <path d="M190 60C190 60 216 94 216 108C216 122.359 204.359 134 190 134C175.641 134 164 122.359 164 108C164 94 190 60 190 60Z" fill="#DC2626"/>
+                      
+                      <!-- ECG Heartbeat Pulse Line -->
+                      <path d="M40 180H110L125 155L145 205L165 170L175 190H205L220 150L235 200L250 180H340" stroke="#DC2626" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      
+                      <!-- Medical Packets & Donors Elements -->
+                      <rect x="50" y="55" width="55" height="70" rx="8" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1.5"/>
+                      <path d="M77 68C77 68 88 84 88 91C88 97 83 102 77 102C71 102 66 97 66 91C66 84 77 68 77 68Z" fill="#EF4444"/>
+                      <rect x="62" y="108" width="31" height="6" rx="3" fill="#D1D5DB"/>
+                      
+                      <rect x="275" y="55" width="55" height="70" rx="8" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1.5"/>
+                      <path d="M302 68C302 68 313 84 313 91C313 97 308 102 302 102C296 102 291 97 291 91C291 84 302 68 302 68Z" fill="#EF4444"/>
+                      <rect x="287" y="108" width="31" height="6" rx="3" fill="#D1D5DB"/>
+                    </svg>
+
+                    <div style="margin-top: 14px; text-align: center;">
+                      <p style="font-size: 0.9rem; font-weight: 600; color: var(--dark-gray-800);">Every drop counts towards saving a heartbeat.</p>
+                      <p style="font-size: 0.8rem; color: var(--gray-500); margin-top: 2px;">Safe blood collection • Rigorous pathogen testing • Direct delivery</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Floating bottom pill -->
+                <div class="floating-pill bottom-right float-anim" style="animation-delay: 1.5s;">
+                  <div class="pill-icon green">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <div style="font-size: 0.75rem; color: var(--gray-500);">Emergency Response</div>
+                    <div style="color: var(--emerald-600); font-size: 0.95rem;">Average Match: &lt; 18 mins</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Statistics Section -->
+      <section class="stats-section" id="statsSection">
+        <div class="container">
+          <div class="stats-grid">
+            <div class="stat-item" id="statCardDonors">
+              <div class="stat-icon">
+                <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+                </svg>
+              </div>
+              <div>
+                <div class="stat-number" id="statDonors">12,450+</div>
+                <div class="stat-label">Donors Registered</div>
+              </div>
+            </div>
+
+            <div class="stat-item" id="statCardLives">
+              <div class="stat-icon">
+                <svg width="28" height="28" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <div>
+                <div class="stat-number" id="statLives">38,200+</div>
+                <div class="stat-label">Lives Saved</div>
+              </div>
+            </div>
+
+            <div class="stat-item" id="statCardRequests">
+              <div class="stat-icon">
+                <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                </svg>
+              </div>
+              <div>
+                <div class="stat-number" id="statRequests">9,840+</div>
+                <div class="stat-label">Blood Requests Fulfilled</div>
+              </div>
+            </div>
+
+            <div class="stat-item" id="statCardHospitals">
+              <div class="stat-icon">
+                <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                </svg>
+              </div>
+              <div>
+                <div class="stat-number" id="statHospitals">180+</div>
+                <div class="stat-label">Hospitals Connected</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           2. ABOUT US SECTION
+           ========================================== -->
+      <section class="section section-alt" id="about">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-badge">Understanding Donation</span>
+            <h2 class="section-title">Why Blood Donation Matters</h2>
+            <p class="section-desc">
+              Blood cannot be synthetically manufactured. Patients battling cancer, surgery complications, 
+              traumatic accidents, and chronic anemia depend entirely on compassionate voluntary donors.
+            </p>
+          </div>
+
+          <!-- Importance & Quick Compatibility Guide -->
+          <div class="about-importance-card">
+            <div class="importance-text">
+              <h3>The Gift That Keeps Beating</h3>
+              <p>
+                A single pint (approximately 450 ml) of donated whole blood can be separated into red blood cells, 
+                plasma, and platelets — giving life-saving hope to up to three different individuals. 
+                Regular donation also stimulates your body’s marrow to produce fresh blood cells and supports cardiovascular health.
+              </p>
+              <div class="quick-facts-list">
+                <div class="quick-fact">
+                  <svg class="check-icon" width="18" height="18" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>1 Donation = Up to 3 Lives Saved</span>
+                </div>
+                <div class="quick-fact">
+                  <svg class="check-icon" width="18" height="18" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>Takes Just 10-15 Minutes</span>
+                </div>
+                <div class="quick-fact">
+                  <svg class="check-icon" width="18" height="18" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>Replenishes Within 24-48 Hours</span>
+                </div>
+                <div class="quick-fact">
+                  <svg class="check-icon" width="18" height="18" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>Free Vital Health Screening</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick Compatibility Chart -->
+            <div class="blood-match-box">
+              <h4>
+                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" style="color: var(--primary-red);">
+                  <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+                </svg>
+                Blood Compatibility Matrix
+              </h4>
+              <p style="font-size: 0.8rem; color: var(--gray-500); margin-bottom: 12px;">Universal donors & recipient guide:</p>
+              <div class="compatibility-pill-grid">
+                <div class="comp-pill">
+                  <strong>O-</strong>
+                  Universal Red Cells
+                </div>
+                <div class="comp-pill">
+                  <strong>AB+</strong>
+                  Universal Recipient
+                </div>
+                <div class="comp-pill">
+                  <strong>A+</strong>
+                  Most Common
+                </div>
+                <div class="comp-pill">
+                  <strong>B+</strong>
+                  High Need
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3 Simple About Cards: Who Can Donate, How Often, Basic Process -->
+          <div class="cards-grid-3">
+            <!-- Card 1: Who Can Donate -->
+            <div class="info-card" id="cardWhoCanDonate">
+              <div class="info-card-icon">
+                <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                </svg>
+              </div>
+              <h3 class="info-card-title">Who Can Donate</h3>
+              <p class="info-card-desc">
+                Most healthy individuals qualify for voluntary donation. Standard criteria include:
+              </p>
+              <div class="checklist">
+                <div class="checklist-item">
+                  <svg class="check-icon" width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>Age between 18 and 65 years old</span>
+                </div>
+                <div class="checklist-item">
+                  <svg class="check-icon" width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>Weight at least 50 kg (110 lbs)</span>
+                </div>
+                <div class="checklist-item">
+                  <svg class="check-icon" width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>Hemoglobin count: minimum 12.5 g/dL</span>
+                </div>
+                <div class="checklist-item">
+                  <svg class="check-icon" width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>Good general health, no active fever or flu</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2: How Often You Can Donate -->
+            <div class="info-card" id="cardHowOften">
+              <div class="info-card-icon">
+                <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                </svg>
+              </div>
+              <h3 class="info-card-title">How Often You Can Donate</h3>
+              <p class="info-card-desc">
+                Your body naturally regenerates fluids and cells rapidly. Recommended intervals:
+              </p>
+              <div class="checklist">
+                <div class="checklist-item">
+                  <svg class="check-icon" width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span><strong>Whole Blood:</strong> Every 56 days (8 weeks)</span>
+                </div>
+                <div class="checklist-item">
+                  <svg class="check-icon" width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span><strong>Platelets:</strong> Every 7 days (up to 24 times/yr)</span>
+                </div>
+                <div class="checklist-item">
+                  <svg class="check-icon" width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span><strong>Plasma:</strong> Every 28 days</span>
+                </div>
+                <div class="checklist-item">
+                  <svg class="check-icon" width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>Automatic cooldown tracker in your dashboard</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3: Basic Donation Process -->
+            <div class="info-card" id="cardBasicProcess">
+              <div class="info-card-icon">
+                <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+                </svg>
+              </div>
+              <h3 class="info-card-title">Basic Donation Process</h3>
+              <p class="info-card-desc">
+                Comfortable, sterile, and monitored by certified medical personnel:
+              </p>
+              <div class="checklist">
+                <div class="checklist-item">
+                  <svg class="check-icon" width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span><strong>Step 1: Check-in:</strong> Quick ID & health questionnaire</span>
+                </div>
+                <div class="checklist-item">
+                  <svg class="check-icon" width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span><strong>Step 2: Mini Checkup:</strong> Pulse, BP, & iron check</span>
+                </div>
+                <div class="checklist-item">
+                  <svg class="check-icon" width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span><strong>Step 3: The Draw:</strong> Gentle 8-10 min donation</span>
+                </div>
+                <div class="checklist-item">
+                  <svg class="check-icon" width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span><strong>Step 4: Recovery:</strong> Free snacks & juice rest</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           3. BECOME A DONOR SECTION
+           ========================================== -->
+      <section class="section" id="register">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-badge">Join The Heroes</span>
+            <h2 class="section-title">Become a Registered Donor</h2>
+            <p class="section-desc">
+              Your registration enables hospitals and emergency patients in your city to reach you 
+              when an exact blood group match is critically needed.
+            </p>
+          </div>
+
+          <div style="max-width: 840px; margin: 0 auto;">
+            <div class="form-card">
+              <form id="becomeDonorForm" novalidate>
+                <div class="form-grid">
+                  <!-- Full Name -->
+                  <div class="form-group full-width">
+                    <label class="form-label" for="donorFullName">
+                      Full Legal Name <span class="required">*</span>
+                    </label>
+                    <input 
+                      type="text" 
+                      id="donorFullName" 
+                      class="form-control" 
+                      placeholder="e.g., Jonathan Sterling" 
+                      required
+                    />
+                    <span class="error-message">Please provide your full legal name.</span>
+                  </div>
+
+                  <!-- Age -->
+                  <div class="form-group">
+                    <label class="form-label" for="donorAge">
+                      Age (Years) <span class="required">*</span>
+                    </label>
+                    <input 
+                      type="number" 
+                      id="donorAge" 
+                      class="form-control" 
+                      placeholder="18 - 65" 
+                      min="18" 
+                      max="65" 
+                      required
+                    />
+                    <span class="error-message">Age must be between 18 and 65.</span>
+                  </div>
+
+                  <!-- Gender -->
+                  <div class="form-group">
+                    <label class="form-label" for="donorGender">
+                      Gender <span class="required">*</span>
+                    </label>
+                    <select id="donorGender" class="form-control" required>
+                      <option value="">-- Select Gender --</option>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                      <option value="Other">Other / Prefer not to say</option>
+                    </select>
+                    <span class="error-message">Please select gender.</span>
+                  </div>
+
+                  <!-- Blood Group -->
+                  <div class="form-group">
+                    <label class="form-label" for="donorBloodGroup">
+                      Blood Group <span class="required">*</span>
+                    </label>
+                    <select id="donorBloodGroup" class="form-control" required>
+                      <option value="">-- Select Blood Group --</option>
+                      <option value="A+">A+ (A Positive)</option>
+                      <option value="A-">A- (A Negative)</option>
+                      <option value="B+">B+ (B Positive)</option>
+                      <option value="B-">B- (B Negative)</option>
+                      <option value="AB+">AB+ (AB Positive)</option>
+                      <option value="AB-">AB- (AB Negative)</option>
+                      <option value="O+">O+ (O Positive)</option>
+                      <option value="O-">O- (O Negative / Universal)</option>
+                    </select>
+                    <span class="error-message">Please select your blood group.</span>
+                  </div>
+
+                  <!-- Phone Number -->
+                  <div class="form-group">
+                    <label class="form-label" for="donorPhone">
+                      Phone Number <span class="required">*</span>
+                    </label>
+                    <input 
+                      type="tel" 
+                      id="donorPhone" 
+                      class="form-control" 
+                      placeholder="e.g., +1 (555) 019-2834" 
+                      required
+                    />
+                    <span class="error-message">Valid phone number required for emergency alerts.</span>
+                  </div>
+
+                  <!-- Email Address -->
+                  <div class="form-group">
+                    <label class="form-label" for="donorEmail">
+                      Email Address <span class="required">*</span>
+                    </label>
+                    <input 
+                      type="email" 
+                      id="donorEmail" 
+                      class="form-control" 
+                      placeholder="e.g., donor@example.com" 
+                      required
+                    />
+                    <span class="error-message">Please enter a valid email address.</span>
+                  </div>
+
+                  <!-- City -->
+                  <div class="form-group">
+                    <label class="form-label" for="donorCity">
+                      City <span class="required">*</span>
+                    </label>
+                    <input 
+                      type="text" 
+                      id="donorCity" 
+                      class="form-control" 
+                      placeholder="e.g., New York, Chicago, Houston" 
+                      required
+                    />
+                    <span class="error-message">Please enter your city.</span>
+                  </div>
+
+                  <!-- Address -->
+                  <div class="form-group full-width">
+                    <label class="form-label" for="donorAddress">
+                      Residential Area / Street Address <span class="required">*</span>
+                    </label>
+                    <input 
+                      type="text" 
+                      id="donorAddress" 
+                      class="form-control" 
+                      placeholder="e.g., 142 Elm Street, Manhattan" 
+                      required
+                    />
+                    <span class="error-message">Please enter your address for local clinic mapping.</span>
+                  </div>
+
+                  <!-- Last Donation Date -->
+                  <div class="form-group">
+                    <label class="form-label" for="donorLastDonated">
+                      Last Blood Donation Date
+                      <span class="form-hint">(Leave blank if first time)</span>
+                    </label>
+                    <input 
+                      type="date" 
+                      id="donorLastDonated" 
+                      class="form-control"
+                    />
+                  </div>
+
+                  <!-- Availability -->
+                  <div class="form-group">
+                    <label class="form-label">
+                      Current Availability Status <span class="required">*</span>
+                    </label>
+                    <div class="radio-group">
+                      <label class="custom-radio-label">
+                        <input type="radio" name="donorAvailability" value="yes" checked />
+                        Available for calls
+                      </label>
+                      <label class="custom-radio-label">
+                        <input type="radio" name="donorAvailability" value="no" />
+                        Temporarily resting
+                      </label>
+                    </div>
+                  </div>
+
+                  <!-- Terms Agreement -->
+                  <div class="form-group full-width" style="margin-top: 10px;">
+                    <label class="custom-radio-label">
+                      <input type="checkbox" id="donorTerms" required checked />
+                      <span>I confirm that I am in good health, weight &ge; 50 kg, and agree to voluntary contact for blood donation requests.</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div style="margin-top: 32px; display: flex; justify-content: flex-end;">
+                  <button type="submit" class="btn btn-primary btn-lg" id="btnSubmitDonor">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+                    </svg>
+                    Complete Donor Registration
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           4. FIND BLOOD SECTION
+           ========================================== -->
+      <section class="section section-alt" id="find-blood">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-badge">Donor Directory</span>
+            <h2 class="section-title">Find Available Blood Donors</h2>
+            <p class="section-desc">
+              Filter our verified volunteer directory by blood group, city, and immediate availability. 
+              Directly contact donors to coordinate emergency medical support.
+            </p>
+          </div>
+
+          <!-- Search & Filter Box -->
+          <div class="search-box-wrapper">
+            <form id="findBloodForm" onsubmit="event.preventDefault(); filterDonors();">
+              <div class="search-filter-grid">
+                <!-- Select Blood Group -->
+                <div class="form-group">
+                  <label class="form-label" for="searchBloodGroup">Blood Group</label>
+                  <select id="searchBloodGroup" class="form-control" onchange="filterDonors()">
+                    <option value="">All Blood Groups</option>
+                    <option value="A+">A+ (A Positive)</option>
+                    <option value="A-">A- (A Negative)</option>
+                    <option value="B+">B+ (B Positive)</option>
+                    <option value="B-">B- (B Negative)</option>
+                    <option value="AB+">AB+ (AB Positive)</option>
+                    <option value="AB-">AB- (AB Negative)</option>
+                    <option value="O+">O+ (O Positive)</option>
+                    <option value="O-">O- (O Negative)</option>
+                  </select>
+                </div>
+
+                <!-- Select City -->
+                <div class="form-group">
+                  <label class="form-label" for="searchCity">City</label>
+                  <input 
+                    type="text" 
+                    id="searchCity" 
+                    class="form-control" 
+                    placeholder="e.g. New York, Chicago..."
+                    onkeyup="filterDonors()"
+                  />
+                </div>
+
+                <!-- Select Area -->
+                <div class="form-group">
+                  <label class="form-label" for="searchArea">Neighborhood / Area</label>
+                  <input 
+                    type="text" 
+                    id="searchArea" 
+                    class="form-control" 
+                    placeholder="e.g. Manhattan, West Loop..."
+                    onkeyup="filterDonors()"
+                  />
+                </div>
+
+                <!-- Search Button -->
+                <div class="form-group">
+                  <button type="submit" class="btn btn-primary" id="btnSearchDonors">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                    Search
+                  </button>
+                </div>
+
+                <!-- Reset Button -->
+                <div class="form-group">
+                  <button type="button" class="btn btn-secondary" onclick="resetDonorSearch()" id="btnResetSearch">
+                    Reset
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <!-- Quick Filters Bar & Results Header -->
+          <div class="search-results-header">
+            <div class="results-count">
+              Showing <span id="resultsCountNum">8</span> Verified Donors
+            </div>
+
+            <div class="quick-filter-pills">
+              <span style="font-size: 0.85rem; font-weight: 600; color: var(--gray-500);">Quick Filter:</span>
+              <button class="filter-pill active" data-group="ALL" onclick="filterByGroup('', this)">All</button>
+              <button class="filter-pill" data-group="O-" onclick="filterByGroup('O-', this)">O- (Universal)</button>
+              <button class="filter-pill" data-group="O+" onclick="filterByGroup('O+', this)">O+</button>
+              <button class="filter-pill" data-group="A+" onclick="filterByGroup('A+', this)">A+</button>
+              <button class="filter-pill" data-group="B+" onclick="filterByGroup('B+', this)">B+</button>
+              <button class="filter-pill" data-group="AB+" onclick="filterByGroup('AB+', this)">AB+</button>
+            </div>
+          </div>
+
+          <!-- Donors Grid (Populated via script.js) -->
+          <div class="donors-grid" id="donorsGrid">
+            <!-- Dynamic Donor Cards Inserted Here -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           5. BLOOD REQUEST SECTION
+           ========================================== -->
+      <section class="section" id="blood-request">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-badge" style="background-color: #fee2e2; border-color: #fca5a5; color: #b91c1c;">
+              🚨 Urgent Assistance
+            </span>
+            <h2 class="section-title">Emergency Blood Request</h2>
+            <p class="section-desc">
+              Require blood units for an urgent surgery, trauma case, or medical treatment? 
+              Post an emergency requisition to broadcast instantly to nearby donors and hospital coordinators.
+            </p>
+          </div>
+
+          <div class="emergency-layout">
+            <!-- Left: Request Form -->
+            <div class="form-card">
+              <h3 style="font-size: 1.3rem; font-weight: 800; color: var(--dark-gray-900); margin-bottom: 20px;">
+                Submit Blood Requisition
+              </h3>
+
+              <form id="emergencyRequestForm" novalidate>
+                <div class="form-grid">
+                  <!-- Patient Name -->
+                  <div class="form-group full-width">
+                    <label class="form-label" for="reqPatientName">
+                      Patient Full Name <span class="required">*</span>
+                    </label>
+                    <input 
+                      type="text" 
+                      id="reqPatientName" 
+                      class="form-control" 
+                      placeholder="e.g. Lucas Henderson" 
+                      required
+                    />
+                    <span class="error-message">Patient name is required.</span>
+                  </div>
+
+                  <!-- Required Blood Group -->
+                  <div class="form-group">
+                    <label class="form-label" for="reqBloodGroup">
+                      Required Blood Group <span class="required">*</span>
+                    </label>
+                    <select id="reqBloodGroup" class="form-control" required>
+                      <option value="">-- Select Group --</option>
+                      <option value="A+">A+</option>
+                      <option value="A-">A-</option>
+                      <option value="B+">B+</option>
+                      <option value="B-">B-</option>
+                      <option value="AB+">AB+</option>
+                      <option value="AB-">AB-</option>
+                      <option value="O+">O+</option>
+                      <option value="O-">O- (Critical Urgent)</option>
+                    </select>
+                    <span class="error-message">Please select required blood group.</span>
+                  </div>
+
+                  <!-- Required Units -->
+                  <div class="form-group">
+                    <label class="form-label" for="reqUnits">
+                      Required Units (Pints) <span class="required">*</span>
+                    </label>
+                    <input 
+                      type="number" 
+                      id="reqUnits" 
+                      class="form-control" 
+                      placeholder="e.g. 2" 
+                      min="1" 
+                      max="10" 
+                      required
+                    />
+                    <span class="error-message">Specify number of units needed.</span>
+                  </div>
+
+                  <!-- Hospital Name -->
+                  <div class="form-group full-width">
+                    <label class="form-label" for="reqHospitalName">
+                      Hospital / Clinic Name <span class="required">*</span>
+                    </label>
+                    <input 
+                      type="text" 
+                      id="reqHospitalName" 
+                      class="form-control" 
+                      placeholder="e.g. Metropolitan General Hospital" 
+                      required
+                    />
+                    <span class="error-message">Hospital name is required.</span>
+                  </div>
+
+                  <!-- Hospital Location -->
+                  <div class="form-group full-width">
+                    <label class="form-label" for="reqHospitalLocation">
+                      Hospital Location / Ward / City <span class="required">*</span>
+                    </label>
+                    <input 
+                      type="text" 
+                      id="reqHospitalLocation" 
+                      class="form-control" 
+                      placeholder="e.g. Room 402, ICU Wing, New York" 
+                      required
+                    />
+                    <span class="error-message">Specific hospital location required.</span>
+                  </div>
+
+                  <!-- Contact Number -->
+                  <div class="form-group">
+                    <label class="form-label" for="reqContactPhone">
+                      Emergency Contact Number <span class="required">*</span>
+                    </label>
+                    <input 
+                      type="tel" 
+                      id="reqContactPhone" 
+                      class="form-control" 
+                      placeholder="e.g. +1 (555) 987-6543" 
+                      required
+                    />
+                    <span class="error-message">Valid contact phone required.</span>
+                  </div>
+
+                  <!-- Emergency Level -->
+                  <div class="form-group">
+                    <label class="form-label" for="reqEmergencyLevel">
+                      Emergency Level <span class="required">*</span>
+                    </label>
+                    <select id="reqEmergencyLevel" class="form-control" required>
+                      <option value="">-- Select Urgency --</option>
+                      <option value="immediate">Immediate (Next 4 Hours)</option>
+                      <option value="twelve-hours">Urgent (Within 12 Hours)</option>
+                      <option value="standard">Standard (Within 24 Hours)</option>
+                    </select>
+                    <span class="error-message">Please select urgency timeframe.</span>
+                  </div>
+                </div>
+
+                <div style="margin-top: 28px;">
+                  <button type="submit" class="btn btn-primary btn-block btn-lg" id="btnSubmitBloodRequest" style="background-color: #b91c1c;">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+                    </svg>
+                    Broadcast Emergency Request
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <!-- Right: Live Active Emergency Requests Feed -->
+            <div class="emergency-broadcast-card">
+              <div class="emergency-broadcast-header">
+                <div>
+                  <h3 style="font-size: 1.3rem; font-weight: 800; color: var(--white);">
+                    Active Emergency Alerts
+                  </h3>
+                  <p style="font-size: 0.85rem; color: var(--gray-300); margin-top: 2px;">
+                    Real-time requisitions requiring immediate blood donation
+                  </p>
+                </div>
+                <div class="emergency-badge-pulse">
+                  <span class="pulse-dot"></span>
+                  Live Feed
+                </div>
+              </div>
+
+              <!-- Requisitions Feed List -->
+              <div class="requests-feed" id="emergencyRequestsFeed">
+                <!-- Dynamically rendered via script.js -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           6. DONOR DASHBOARD SECTION
+           ========================================== -->
+      <section class="section section-alt" id="dashboard">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-badge">Life Saver Portal</span>
+            <h2 class="section-title">Donor Dashboard</h2>
+            <p class="section-desc">
+              Manage your personal donation records, monitor recovery cooldowns, and toggle your availability status.
+            </p>
+          </div>
+
+          <div class="dashboard-grid">
+            <!-- Left: Profile & Status Card -->
+            <div class="profile-card">
+              <div class="profile-header-flex">
+                <div class="profile-avatar-large" id="dashAvatar">AW</div>
+                <div>
+                  <h3 class="profile-name" id="dashDonorName">Alexander Wright</h3>
+                  <div class="profile-badge-role" id="dashDonorBadge">Gold Life Saver</div>
+                  <div class="donor-id-pill" id="dashDonorId">Donor ID: DON-7749</div>
+                </div>
+              </div>
+
+              <!-- Quick Blood & Metrics -->
+              <div class="dashboard-stats-row">
+                <div class="dash-stat-box">
+                  <div class="num" id="dashDonorBlood">O+</div>
+                  <div class="lbl">Blood Group</div>
+                </div>
+                <div class="dash-stat-box">
+                  <div class="num" id="dashTotalDonations">8</div>
+                  <div class="lbl">Total Donations</div>
+                </div>
+                <div class="dash-stat-box">
+                  <div class="num" id="dashLivesSaved" style="color: var(--emerald-600);">24</div>
+                  <div class="lbl">Lives Impacted</div>
+                </div>
+              </div>
+
+              <!-- Availability Status Toggle Switch -->
+              <div class="availability-toggle-box">
+                <div class="toggle-info">
+                  <h4>Donor Availability</h4>
+                  <p id="dashAvailabilityStatusText">Active & Available for emergency calls</p>
+                </div>
+                <label class="switch" for="donorAvailabilitySwitch">
+                  <input type="checkbox" id="donorAvailabilitySwitch" checked />
+                  <span class="slider"></span>
+                </label>
+              </div>
+
+              <!-- Eligibility Dates Details -->
+              <div class="donor-details-list" style="margin-bottom: 0;">
+                <div class="detail-row">
+                  <span>Last Blood Donation Date:</span>
+                  <span class="value" id="dashLastDonationDate">June 14, 2026</span>
+                </div>
+                <div class="detail-row">
+                  <span>Next Eligible Donation:</span>
+                  <span class="value" id="dashNextEligibleDate" style="color: var(--emerald-600); font-weight: 700;">Eligible Now</span>
+                </div>
+                <div class="detail-row">
+                  <span>Certification:</span>
+                  <span class="value" style="color: var(--primary-red);">Verified Donor ID Card Active</span>
+                </div>
+              </div>
+
+              <div style="margin-top: 20px;">
+                <button class="btn btn-outline-red btn-block btn-sm" onclick="openAuthModal()" id="btnSwitchProfileInDash">
+                  Switch or Register Another Profile
+                </button>
+              </div>
+            </div>
+
+            <!-- Right: Donation History Timeline -->
+            <div class="timeline-card">
+              <div class="timeline-card-header">
+                <h3>Verified Donation History</h3>
+                <span class="status-tag available" style="font-size: 0.75rem;">Verified Records</span>
+              </div>
+
+              <div class="timeline" id="dashTimelineList">
+                <!-- Dynamically filled via script.js -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           7. CONTACT US & EMERGENCY HELPLINE
+           ========================================== -->
+      <section class="section" id="contact">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-badge">Get In Touch</span>
+            <h2 class="section-title">Contact Us & Helplines</h2>
+            <p class="section-desc">
+              Have questions regarding blood donation eligibility, organizing a community blood drive, 
+              or hospital partnership? Our team is available 24/7.
+            </p>
+          </div>
+
+          <div class="contact-layout">
+            <!-- Left: Contact Form -->
+            <div class="form-card">
+              <h3 style="font-size: 1.3rem; font-weight: 800; color: var(--dark-gray-900); margin-bottom: 20px;">
+                Send Us a Message
+              </h3>
+              <form id="contactForm" novalidate>
+                <div class="form-group" style="margin-bottom: 16px;">
+                  <label class="form-label" for="contactName">Your Name <span class="required">*</span></label>
+                  <input type="text" id="contactName" class="form-control" placeholder="e.g. Dr. Sarah Chen" required />
+                </div>
+
+                <div class="form-group" style="margin-bottom: 16px;">
+                  <label class="form-label" for="contactEmail">Email Address <span class="required">*</span></label>
+                  <input type="email" id="contactEmail" class="form-control" placeholder="e.g. sarah.chen@hospital.org" required />
+                </div>
+
+                <div class="form-group" style="margin-bottom: 16px;">
+                  <label class="form-label" for="contactSubject">Subject</label>
+                  <select id="contactSubject" class="form-control">
+                    <option value="general">General Inquiry</option>
+                    <option value="drive">Organize a Community Blood Drive</option>
+                    <option value="hospital">Hospital / NGO Partnership</option>
+                    <option value="feedback">Feedback / Support</option>
+                  </select>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 24px;">
+                  <label class="form-label" for="contactMessage">Message <span class="required">*</span></label>
+                  <textarea id="contactMessage" class="form-control" rows="4" placeholder="How can our blood coordination team assist you?" required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block btn-lg" id="btnSubmitContact">
+                  Send Message
+                </button>
+              </form>
+            </div>
+
+            <!-- Right: Helplines & Info Cards -->
+            <div class="contact-info-panel">
+              <!-- Urgent Helpline Box -->
+              <div class="emergency-helpline-box">
+                <span style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; opacity: 0.9;">
+                  Toll-Free Emergency Dispatch
+                </span>
+                <h3>24/7 National Blood Helpline</h3>
+                <p>
+                  For critical hospital requirements, acute surgical trauma, or rapid donor coordination.
+                </p>
+                <a href="tel:18007335433" class="helpline-dial-btn" id="contactHelplineBtn">
+                  <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z"/>
+                  </svg>
+                  1800-RED-LIFE
+                </a>
+              </div>
+
+              <!-- Hospital & Headquarters Details -->
+              <div class="contact-card-box">
+                <div class="contact-details-list">
+                  <div class="contact-detail-item">
+                    <div class="contact-icon-wrapper">
+                      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                      </svg>
+                    </div>
+                    <div class="contact-detail-text">
+                      <h4>Official Email</h4>
+                      <p><a href="mailto:support@blooddonation.org">support@blooddonation.org</a></p>
+                      <p><a href="mailto:emergency@blooddonation.org">emergency@blooddonation.org</a></p>
+                    </div>
+                  </div>
+
+                  <div class="contact-detail-item">
+                    <div class="contact-icon-wrapper">
+                      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                      </svg>
+                    </div>
+                    <div class="contact-detail-text">
+                      <h4>Central Blood Transfusion HQ</h4>
+                      <p>450 Health Parkway, Medical District, Suite 200</p>
+                      <p>Open 24 Hours • 7 Days a Week</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Frequently Asked Questions Accordion -->
+          <div class="faq-section">
+            <h3 class="faq-title">Frequently Asked Questions</h3>
+            <div class="faq-grid">
+              <div class="faq-item">
+                <button class="faq-question">
+                  <span>Does donating blood hurt?</span>
+                  <svg class="faq-chevron" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                  </svg>
+                </button>
+                <div class="faq-answer">
+                  <p>You may feel a quick initial pinch when the sterile needle is inserted, lasting only a fraction of a second. Most donors relax comfortably during the 8-10 minute donation process with zero pain.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">
+                  <span>How long does it take for my body to replace donated blood?</span>
+                  <svg class="faq-chevron" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                  </svg>
+                </button>
+                <div class="faq-answer">
+                  <p>Your blood volume (plasma fluid) is completely replenished within 24 to 48 hours when you drink ample fluids. Your red blood cells are fully regenerated by your bone marrow within 4 to 8 weeks.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">
+                  <span>Can I donate blood if I recently got a tattoo or piercing?</span>
+                  <svg class="faq-chevron" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                  </svg>
+                </button>
+                <div class="faq-answer">
+                  <p>In most regions, if your tattoo or piercing was performed in a state-regulated facility using sterile single-use equipment, there is no deferral period. Otherwise, a standard 3-month waiting period applies.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">
+                  <span>What should I do before and after donating blood?</span>
+                  <svg class="faq-chevron" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                  </svg>
+                </button>
+                <div class="faq-answer">
+                  <p>Drink an extra 16 oz of water, eat a healthy meal avoiding excessive fatty foods, and ensure you are well rested. Afterward, enjoy refreshments, keep the bandage on for a few hours, and avoid strenuous heavy lifting for the rest of the day.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ==========================================
+         FOOTER
+         ========================================== -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- Col 1: Brand Info -->
+          <div>
+            <div class="nav-brand" style="color: var(--white);">
+              <div class="brand-icon">
+                <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+                </svg>
+              </div>
+              <span class="brand-text">Red<span>Life</span></span>
+            </div>
+            <p class="footer-brand-desc">
+              Dedicated to closing the emergency blood supply gap by empowering voluntary donors 
+              and connecting hospitals in real-time.
+            </p>
+          </div>
+
+          <!-- Col 2: Quick Links -->
+          <div class="footer-col">
+            <h4>Quick Navigation</h4>
+            <div class="footer-links">
+              <a href="#home">Home</a>
+              <a href="#about">Why Donate Blood</a>
+              <a href="#register">Become a Donor</a>
+              <a href="#find-blood">Find Blood Directory</a>
+              <a href="#blood-request">Emergency Blood Request</a>
+            </div>
+          </div>
+
+          <!-- Col 3: Donor Resources -->
+          <div class="footer-col">
+            <h4>Donor Resources</h4>
+            <div class="footer-links">
+              <a href="#about">Eligibility Requirements</a>
+              <a href="#dashboard">Donor Dashboard</a>
+              <a href="#contact">Hospital Partnership</a>
+              <a href="#contact">Emergency Hotline</a>
+              <a href="#about">Blood Compatibility Guide</a>
+            </div>
+          </div>
+
+          <!-- Col 4: Medical Disclaimer -->
+          <div class="footer-col">
+            <h4>Emergency Dispatch</h4>
+            <div class="footer-badge-alert">
+              <p>
+                <strong>Immediate Threat to Life:</strong> Always dial emergency services (911 / 112) first 
+                or proceed to the nearest emergency trauma room.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div>© 2026 RedLife Blood Donation Platform. Non-Profit Healthcare Initiative. All rights reserved.</div>
+          <div>Volunteer blood donation saves millions every year.</div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ==========================================
+         MODALS & TOAST NOTIFICATIONS
+         ========================================== -->
+
+    <!-- Modal 1: Contact Donor Modal -->
+    <div class="modal-overlay" id="contactDonorModal">
+      <div class="modal-container">
+        <div class="modal-header">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <div class="brand-icon" style="width: 28px; height: 28px; border-radius: 6px;">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+              </svg>
+            </div>
+            <h3 class="modal-title">Contact Blood Donor</h3>
+          </div>
+          <button class="modal-close-btn" onclick="closeAllModals()" aria-label="Close modal">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div style="text-align: center; margin-bottom: 20px;">
+            <h4 id="modalDonorName" style="font-size: 1.25rem; font-weight: 800; color: var(--dark-gray-900);">Donor Name</h4>
+            <p id="modalDonorLocation" style="color: var(--gray-500); font-size: 0.9rem;">City & Neighborhood</p>
+            <div class="blood-badge" style="display: inline-flex; margin-top: 8px;">
+              Blood Group: <strong id="modalDonorBlood" style="margin-left: 4px;">O+</strong>
+            </div>
+          </div>
+
+          <div style="background-color: var(--gray-50); border: 1px solid var(--gray-200); border-radius: var(--radius-md); padding: 16px; margin-bottom: 20px; text-align: center;">
+            <div style="font-size: 0.8rem; color: var(--gray-500); margin-bottom: 4px;">Verified Direct Phone:</div>
+            <div id="modalDonorPhone" style="font-size: 1.2rem; font-weight: 800; color: var(--dark-gray-900);">+1 (555) 000-0000</div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <a href="#" id="modalDonorTelLink" class="btn btn-primary btn-block">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z"/>
+              </svg>
+              Direct Call Donor
+            </a>
+
+            <a href="#" id="modalDonorWhatsappLink" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-block">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" style="color: #25D366;">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+              </svg>
+              Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 2: Sign In / Account Switcher Modal -->
+    <div class="modal-overlay" id="authModal">
+      <div class="modal-container">
+        <div class="modal-header">
+          <h3 class="modal-title">Donor Account & Profiles</h3>
+          <button class="modal-close-btn" onclick="closeAllModals()" aria-label="Close modal">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p style="font-size: 0.9rem; color: var(--dark-gray-600); margin-bottom: 16px;">
+            Select a verified donor profile to preview personalized donor dashboard analytics or register a brand-new profile:
+          </p>
+
+          <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px;">
+            <!-- Profile 1 -->
+            <button class="btn btn-secondary" style="justify-content: space-between; padding: 12px 16px;" onclick="switchActiveAccount('marcus')">
+              <div style="text-align: left;">
+                <div style="font-weight: 700; color: var(--dark-gray-900);">Dr. Marcus Vance</div>
+                <div style="font-size: 0.8rem; color: var(--gray-500);">12 Donations • Universal Donor (O-)</div>
+              </div>
+              <span class="blood-badge">O-</span>
+            </button>
+
+            <!-- Profile 2 -->
+            <button class="btn btn-secondary" style="justify-content: space-between; padding: 12px 16px;" onclick="switchActiveAccount('elena')">
+              <div style="text-align: left;">
+                <div style="font-weight: 700; color: var(--dark-gray-900);">Elena Rostova</div>
+                <div style="font-size: 0.8rem; color: var(--gray-500);">5 Donations • Blood Group A+</div>
+              </div>
+              <span class="blood-badge">A+</span>
+            </button>
+          </div>
+
+          <div style="border-top: 1px solid var(--gray-200); padding-top: 16px; text-align: center;">
+            <p style="font-size: 0.85rem; color: var(--gray-500); margin-bottom: 10px;">Want to register your own profile?</p>
+            <a href="#register" class="btn btn-primary btn-block" onclick="closeAllModals()">
+              Fill Donor Registration Form
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating Toast Notifications Container -->
+    <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+    <!-- Main JavaScript Logic -->
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>
